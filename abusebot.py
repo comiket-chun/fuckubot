@@ -2,6 +2,7 @@
 
 import random
 import linecache
+import time
 
 eol='\n'
 buffsize = 1024
