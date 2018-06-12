@@ -26,7 +26,7 @@ def onQQMessage(bot, contact, member, content):
 
     #辱骂
     with open('./.qqbot-tmp/plugins/AbuseBot/list.json','r') as namelist:
-        target = name.read(16)
+        target = namelist.read(16)
         if name in target:
             randline = random.randint(1,linenum)
             reply = linecache.getline(r'dict.txt', randline)
