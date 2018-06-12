@@ -1,3 +1,3 @@
-# AbuseBot
+# fuckubot
 
 NM$L!
