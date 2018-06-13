@@ -23,19 +23,16 @@ def onQQMessage(bot, contact, member, content):
 
     name = str(member)
     name = name.replace('成员','')
-    name = name.replace('"','')
+    name = name.replace('“','')
+    name = name.replace('”','')
 
     #辱骂
     with open('./.qqbot-tmp/plugins/AbuseBot/list.json','r') as namelist:
         target = namelist.read(16)
         if name in target:
             randline = random.randint(1,linenum)
-            reply = linecache.getline(r'dict.txt', randline)
-            bot.SendTo(contact,'@'+name+' '+reply.replace("\n", ""))
+            reply = linecache.getline(r'./.qqbot-tmp/plugins/AbuseBot/dict.txt', randline)
+            bot.SendTo(contact,'@'+name+' '+str(reply.replace('\n','')))
 
-    #debug
     if content == 'debug':
-        bot.SendTo(contact,'bot='+str(bot)+' contact='+str(contact)+' member='+str(member)+' content='+str(content))
-    if content == '?member':
-        print(member)
-        bot.SendTo(contact,str(member))
+        bot.SendTo(contact,'bot='+str(bot)+' contact='+str(contact)+' member='+str(member)+' content='+str(content)+' target='+str(target)+' name='+str(name)+' rand='+str(randline))
